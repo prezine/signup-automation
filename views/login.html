@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="stylesheets/main.min.css">
+    </head>
+    <body class="o-page o-page--center">
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <div class="o-page__card">
+            <div class="c-card u-mb-xsmall">
+                <header class="c-card__header u-pt-large">
+                    <a class="c-card__icon" href="./#!">
+                        <img src="images/logo.png" style="width: 40px;" alt="Automation">
+                    </a>
+                    <h1 class="u-h3 u-text-center u-mb-zero">Welcome back! Please login.</h1>
+                </header>
+                <form class="c-card__body" method="post" action="./auth">
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input1">Username</label> 
+                        <input class="c-input" type="tel" name="username" id="input1" placeholder="admin"> 
+                    </div>
+
+                    <div class="c-field u-mb-small">
+                        <label class="c-field__label" for="input2">Password</label> 
+                        <input class="c-input" type="password" name="password" id="input2" placeholder="password"> 
+                    </div>
+
+                    <button class="c-btn c-btn--info c-btn--fullwidth" type="submit">Log me in</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main javascsript -->
+        <script src="javascripts/main.min.js"></script>
+    </body>
+</html>

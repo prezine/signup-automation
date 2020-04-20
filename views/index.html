@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{ title }}</title>
+        <meta name="description" content="Moneytide">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="stylesheets/main.min.css">
+        <style type="text/css">
+            .fileContainer {
+                display: inline-block;
+                position: relative;
+                margin-top: 6px;
+                padding: 6px 12px;
+                width: 100%;
+                border: 2px solid #C9C9C9;
+                border-radius: 4px;
+                color: #ccc;
+                overflow: hidden;
+                font-size: 13px;
+            }
+
+            .fileContainer [type=file] {
+                cursor: inherit;
+                display: block;
+                font-size: 999px;
+                filter: alpha(opacity=0);
+                min-height: 100%;
+                min-width: 100%;
+                opacity: 0;
+                position: absolute;
+                right: 0;
+                text-align: right;
+                top: 0;
+            }
+            .mt-2 { margin-top: 6px; }
+        </style>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        
+        <div class="c-toolbar u-mb-medium">
+            <nav class="c-toolbar__nav u-mr-auto u-hidden-down@mobile">
+                <a class="c-toolbar__nav-item" href="./#tab1">Dashboard Overview</a>
+            </nav>
+
+            <a class="c-btn c-btn--success" href="./#" data-toggle="modal" data-target="#modal1">
+                <i class="fa fa-plus u-mr-xsmall u-opacity-medium"></i> Upload File
+            </a>
+            <!-- Modal -->
+            <div class="c-modal c-modal--xsmall modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" data-backdrop="static">
+                <div class="c-modal__dialog modal-dialog" role="document">
+                    <div class="c-modal__content">
+                        
+                        <div class="c-modal__header">
+                            <h3 class="c-modal__title">File Uploader</h3>
+
+                            <span class="c-modal__close" data-dismiss="modal" aria-label="Close">
+                                <i class="fa fa-close"></i>
+                            </span>
+                        </div>
+
+                        <form class="c-modal__body" method="post" action="./upload" enctype="multipart/form-data">
+
+                            <div class="c-field u-mb-small">
+                                <label class="c-field__label fileContainer"> Select Json Data
+                                    <input class="c-input" type="file" id="file-json" name="csv" accept=".json">
+                                </label>
+                            </div>
+
+                            <div class="c-field u-mb-small">
+                                <label class="c-field__label">Json Data</label>
+                                    <textarea class="c-input" id="file-output" name="data"></textarea>
+                            </div>
+
+                            <div class="c-field u-mb-medium">
+                                <label class="c-field__label" for="select2">Select File Limit</label>
+
+                                <!-- Select2 jquery plugin is used -->
+                                <select class="c-select has-search" name="limit" id="select2">
+                                    <option>-- choose file count --</option>
+                                    <option>5</option>
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>50</option>
+                                    <option>100</option>
+                                </select>
+                            </div>
+
+                            <div class="c-card u-bg-secondary u-p-small u-mb-small">
+                                <span class="u-text-mute u-text-small">Heads up</span>
+                                <p>Goodluck ;)</p>
+                            </div>
+
+                            <button class="c-btn c-btn--success c-btn--fullwidth" type="submit">
+                                Upload File
+                            </button>
+                        </form>
+
+                    </div><!-- // .c-modal__content -->
+                </div><!-- // .c-modal__dialog -->
+            </div>    
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="u-mv-large u-text-center">
+                        <h2 class="u-mb-xsmall">Hi {{ name }}! upload file, and see analytics from automation.</h2>
+                        <p class="u-text-mute u-h6"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="c-progress-card" data-mh="graph-cards">
+                        <h1>
+                            10 
+                        </h1>
+                        <p class="c-progress-card__title">Successful Uploads</p>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="c-progress-card" data-mh="graph-cards">
+                        <h1>
+                            12
+                        </h1>
+                        <p class="c-progress-card__title">Failed Uploads </p>
+                    </div>
+                </div>
+                <div class="col-xl-12">
+
+                </div>
+            </div>
+        </div>
+
+    <!-- Main javascsript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="javascripts/main.min.js"></script>
+    <script src="javascripts/custom.js"></script>
+    </body>
+</html>
